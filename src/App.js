@@ -7,8 +7,13 @@ import NavMain from "./Components/NavMain";
 // import Recap from "./Components/Recap";
 // import SearchBar from "./Components/SearchBar";
 // import Selection from "./Components/Selection";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faAngleRight, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+
+library.add(faUser, faAngleRight, faUserCircle);
 
 function App() {
   return (
