@@ -14,5 +14,13 @@
   text-align: center;
 }
 
-.right-logo {
+.icones {
+  display: flex;
+  width: 20%;
+  margin: auto 0;
+  justify-content: space-evenly;
+}
+
+.icones i {
+  width: 20px;
 }
