@@ -6,8 +6,14 @@
 }
 
 .logo-burger {
-  width: 10%;
-  height: 10%;
+  width: inherit;
+}
+.logo-image {
+  display: flex;
+}
+
+.logo-image a {
+  width: 150px;
 }
 
 .left-logo {
