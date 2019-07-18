@@ -4,7 +4,6 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       showingInfoWindow: false,
       selectedPlace: {},

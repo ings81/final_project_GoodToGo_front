@@ -18,16 +18,31 @@ export default class MenuForm extends Component {
       .catch(err => console.log(err));
   };
   handleChange = e => {
+    console.log(this.state);
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
     console.log(process.env.REACT_APP_BACKEND_API);
+
     return (
       <div>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <input name="title" value={this.state.title} />
-          <input name="image" value={this.state.image} />
-          <input name="price" value={this.state.price} type="number" />
+          <input
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChange}
+          />
+          <input
+            name="image"
+            value={this.state.image}
+            onChange={this.handleChange}
+          />
+          <input
+            name="price"
+            value={this.state.price}
+            type="number"
+            onChange={this.handleChange}
+          />
           <button>Submit</button>
         </form>
       </div>

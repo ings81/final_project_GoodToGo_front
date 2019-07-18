@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Map from "../Components/Map";
+import Map from "../Components/map";
 
 export default class Home extends Component {
   handleClick = message => {
