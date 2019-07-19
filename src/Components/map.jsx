@@ -8,6 +8,7 @@ export class MapContainer extends Component {
     this.state = {
       showingInfoWindow: false,
       selectedPlace: {},
+
       activeMarker: {},
 
       stores: [
