@@ -30,7 +30,6 @@ export default class Menu extends Component {
     //   (acc, menu) => (acc += menu.price)
     //  , 0
     // );
-
     return totalPrice;
   };
 
