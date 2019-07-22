@@ -39,7 +39,6 @@ export default class Signup extends Component {
     evt.preventDefault();
 
     // if (!this.checkAllFields()) return console.warn("form incomplete");
-    const { firstname, lastname, email, password } = this.state;
 
     apiHandler
       .post("/auth/signup", this.state) // let's post the built formData object as a regular payload
@@ -49,7 +48,7 @@ export default class Signup extends Component {
         this.props.redirect("/home");
         console.log(serverRes);
       })
-      .catch(serverErr => console.error(serverErr));
+      .catch(serverErr => console.error(serverErr.response));
   };
 
   render() {
