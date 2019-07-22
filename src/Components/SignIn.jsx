@@ -40,9 +40,9 @@ export default class Signin extends Component {
             onChange={handleChange}
           >
             <h1 className="title">Signin</h1>
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email</label>
             <input id="email" name="email" type="email" defaultValue={email} />
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
             <input
               name="password"
               id="password"
