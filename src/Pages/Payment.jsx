@@ -12,7 +12,7 @@ const Payment = () => {
       <input type="date" />
       <label>Security Code</label>
       <input type="number" />
-      <button>Validate</button>
+      <button className="button">Validate</button>
     </div>
   );
 };

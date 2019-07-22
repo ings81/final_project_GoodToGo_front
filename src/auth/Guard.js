@@ -50,7 +50,7 @@ class AuthProvider extends React.Component {
 
   isLoggedIn = () => {
     apiAuthHandler
-      .get("/loggedin", null)
+      .get("/auth/loggedin", null)
       .then(serverRes => {
         // server accepted the request (this user is stored into session)
         // let's update the state loginStatus + user key/value pairs
@@ -64,7 +64,7 @@ class AuthProvider extends React.Component {
 
   signin = (clbk, data) => {
     apiAuthHandler
-      .post("/signin", data)
+      .post("/auth/signin", data)
       .then(async serverRes => {
         // once loggedin, the state is updated =>
         // this will prevent the ProtectedRoute component redirect to /signin
@@ -78,12 +78,13 @@ class AuthProvider extends React.Component {
 
   signout = clbk => {
     // send a request to the server : session will be destroyed there
-    apiAuthHandler.post("/signout").then(serverRes => {
+    apiAuthHandler.post("/auth/signout").then(serverRes => {
       this.setState({ loginStatus: false }, () => clbk(this.isLoggedIn));
     });
   };
 
   render() {
+    console.log("je suis passé par la");
     // return a context Provider ...
     return (
       <AuthContext.Provider

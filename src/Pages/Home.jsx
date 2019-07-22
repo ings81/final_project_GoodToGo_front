@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Map from "../Components/map";
+import Footer from "../Components/Footer";
 
 export default class Home extends Component {
   handleClick = message => {
@@ -10,6 +11,7 @@ export default class Home extends Component {
       <div>
         <h1>Home Page</h1>
         <Map handleClick={this.handleClick} />
+        <Footer />
       </div>
     );
   }
