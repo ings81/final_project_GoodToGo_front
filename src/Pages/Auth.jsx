@@ -7,7 +7,7 @@ export default function Auth(props) {
   const wantToSignIn = props.location.pathname === "/signin";
 
   var message = wantToSignIn
-    ? "Don't you have an account yet"
+    ? "Don't you need to register"
     : "Already have an account";
 
   var path = wantToSignIn ? "/signup" : "/signin";
