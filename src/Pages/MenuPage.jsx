@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
+import ChoiceAliment from "../Components/ChoiceAliment";
 import RecapMenu from "../Components/RecapMenu";
 export default class Menu extends Component {
   state = {
     aliments: [],
     menus: [],
-    selectedMenus: []
+    selectedMenus: [],
+    selectedAliments: []
   };
   componentDidMount() {
     Promise.all([getAllAliments(), getAllMenu()])
@@ -22,6 +24,7 @@ export default class Menu extends Component {
   getKidMenus = () => {
     return this.state.menus.filter(menu => menu.category === "kid");
   };
+
   handleAdd = menu => {
     // const tmpselectedMenus = [...this.state.selectedMenu];
     // tmpselectedMenus.push(menu);
@@ -37,6 +40,14 @@ export default class Menu extends Component {
     //   return items._id !== menu._id;
     // });
     // this.setState({ selectedMenus: filtered });
+  };
+  // handleAdd = item => {
+  //   this.setState({ selectedAliments: [...this.state.selectedAliments, item] });
+  // };
+  handleDelete = index => {
+    const selectedAliments = [...this.state.selectedAliments];
+    selectedAliments.splice(index, 1);
+    this.setState({ selectedAliments });
   };
 
   render() {
@@ -58,6 +69,12 @@ export default class Menu extends Component {
           handleAdd={this.handleAdd}
           handleDelete={this.handleDelete}
           menus={this.getKidMenus()}
+        />
+        <ChoiceAliment
+          title="On the go"
+          handleAdd={this.handleAdd}
+          handleDelete={this.handleDelete}
+          items={this.state.aliments}
         />
       </div>
     );
