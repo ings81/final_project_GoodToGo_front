@@ -11,7 +11,7 @@ const Payment = () => {
       <label>Expiration Date</label>
       <input type="date" />
       <label>Security Code</label>
-      <input type="number" />
+      <input type="text" />
       <button className="button">Validate</button>
     </div>
   );
