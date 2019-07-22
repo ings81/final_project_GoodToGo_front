@@ -8,7 +8,6 @@ const ChoiceMenu = ({ title, menus, handleAdd, handleDelete }) => {
         {menus.map(menu => (
           <div>
             <button onClick={e => handleAdd(menu)}>Plus</button>
-            <button onClick={e => handleDelete(menu)}>Moins</button>
             <div>
               <img src={menu.image} alt={menu.name} />
               <p>{menu.title}</p>

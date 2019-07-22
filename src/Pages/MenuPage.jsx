@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
-import DisplayPrice from "../Components/DisplayPrice";
+import RecapMenu from "../Components/RecapMenu";
 export default class Menu extends Component {
   state = {
     aliments: [],
@@ -15,23 +15,6 @@ export default class Menu extends Component {
       })
       .catch(err => console.log(err));
   }
-  getTotalPrice = () => {
-    let totalPrice = 0;
-    // for (let i = 0; i < this.state.selectedMenus.length; i++) {
-    //   totalPrice += this.state.selectedMenus[i].price;
-    // }
-    // this.state.selectedMenus.forEach(menu => {
-    //   totalPrice += menu.price;
-    // });
-    for (let menu of this.state.selectedMenus) {
-      totalPrice += menu.price;
-    }
-    // return this.state.selectedMenus.reduce(
-    //   (acc, menu) => (acc += menu.price)
-    //  , 0
-    // );
-    return totalPrice;
-  };
 
   getAdultMenus = () => {
     return this.state.menus.filter(menu => menu.category === "adult");
@@ -45,23 +28,29 @@ export default class Menu extends Component {
     // this.setState({selectedMenus: tmpselectedMenus})
     this.setState({ selectedMenus: [...this.state.selectedMenus, menu] });
   };
-  handleDelete = menu => {
-    const filtered = this.state.selectedMenus.filter(items => {
-      return items._id !== menu._id;
-    });
-    this.setState({ selectedMenus: filtered });
+  handleDelete = index => {
+    const selectedMenus = [...this.state.selectedMenus];
+    selectedMenus.splice(index, 1);
+    this.setState({ selectedMenus });
+    //Probleme dans le cas ou dans le tableau il y aurait plusieurs elements avec la meme _id
+    // const filtered = this.state.selectedMenus.filter(items => {
+    //   return items._id !== menu._id;
+    // });
+    // this.setState({ selectedMenus: filtered });
   };
 
   render() {
     return (
       <div>
         <h1>Menu Page</h1>
-        <DisplayPrice price={this.getTotalPrice()} />
+        <RecapMenu
+          handleDelete={this.handleDelete}
+          selectedItems={this.state.selectedMenus}
+        />
         {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
         <ChoiceMenu
           title="Menus"
           handleAdd={this.handleAdd}
-          handleDelete={this.handleDelete}
           menus={this.getAdultMenus()}
         />
         <ChoiceMenu
