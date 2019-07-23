@@ -5,6 +5,8 @@ import burger from "../images/Burger_King.svg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/NavMain.css";
 import { NavLink } from "react-router-dom";
+import { AuthConsumer } from "../auth/Guard";
+import SignoutIcon from "../auth/signoutIcon";
 
 function NavMain() {
   //   const myRef = React.createRef();
@@ -26,8 +28,8 @@ function NavMain() {
           </NavLink>
         </div>
         <div className="left-logo">
-          <h1>GOOD TO GO</h1>
-          <p>the fastest way to get to the road</p>
+          <h1>GoodToGO</h1>
+          <p>"The Fastest way to get on the road"</p>
         </div>
 
         <div className="icones">
@@ -55,6 +57,26 @@ function NavMain() {
               <p>Sign Up</p>
             </div>
           </NavLink>
+          <AuthConsumer>
+            {({ loginStatus, signout }) =>
+              loginStatus === true ? (
+                <React.Fragment>
+                  <NavLink
+                    activeClassName="is-active"
+                    className="icon auth fa fa-user-circle fa-lg"
+                    to="/dashboard"
+                  />
+                  <SignoutIcon signout={signout} />
+                </React.Fragment>
+              ) : (
+                <NavLink
+                  activeClassName="is-active"
+                  className="icon auth fa fa-user fa-lg"
+                  to="/signin"
+                />
+              )
+            }
+          </AuthConsumer>
         </div>
       </div>
     </div>

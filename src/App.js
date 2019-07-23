@@ -22,9 +22,9 @@ function App() {
       <NavMain />
       <div className="App">
         <Switch>
-          <Redirect exact from="/" to="/home" />
+          {/* <Redirect exact from="/" to="/home" /> */}
           <Route path="/menu" component={Menu} />
-          <Route path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path={["/signin", "/signup"]} component={PageAuth} />
           <Route path="/payment" component={Payment} />
           <ProtectedRoute path="/dashboard" component={Dashboard} />
