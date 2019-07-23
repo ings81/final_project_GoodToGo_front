@@ -1,4 +1,5 @@
 import React from "react";
+import "./../style/Aliment.css";
 
 const ChoiceAliment = ({ title, items, handleAdd, handleDelete }) => {
   if (!items) {
@@ -8,9 +9,9 @@ const ChoiceAliment = ({ title, items, handleAdd, handleDelete }) => {
   return (
     <div>
       <h1>{title}</h1>
-      <div>
+      <div className="item">
         {items.map(item => (
-          <div>
+          <div className="menu-case">
             <button onClick={e => handleAdd(item)}>Plus</button>
             <div>
               <img src={item.image} alt={item.name} />

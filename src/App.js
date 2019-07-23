@@ -8,7 +8,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleRight, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import Menu from "./Pages/MenuPage";
-import "./App.css";
+import "./style/App.css";
+import "./style/MenuPage.css";
 
 library.add(faUser, faAngleRight, faUserCircle);
 
