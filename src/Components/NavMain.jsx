@@ -1,10 +1,9 @@
 import React from "react";
-import "./NavMain.css";
 // import "font-awesome/css/font-awesome.min.css";
 import burger from "../images/Burger_King.svg.png";
 // eslint-disable-next-line
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "../style/NavMain.css";
 import { NavLink } from "react-router-dom";
 
 function NavMain() {

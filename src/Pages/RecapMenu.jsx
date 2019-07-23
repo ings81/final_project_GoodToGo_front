@@ -1,7 +1,21 @@
 import React from "react";
+import RecapMenu from "../Components/RecapMenu";
 
-const RecapMenu = () => {
-  return <div />;
+export default class RecapMenu extends Component {
+
+  handleDelete = index => {
+    const selectedMenus = [...this.state.selectedMenus];
+    selectedMenus.splice(index, 1);
+    this.setState({ selectedMenus });
+  };
+
+  render();
+  return (
+    <div>
+      <RecapMenu
+        handleDelete={this.handleDelete}
+        selectedItems={this.state.selectedMenus}
+      />
+    </div>
+  );
 };
-
-export default RecapMenu;

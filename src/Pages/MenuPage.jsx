@@ -3,6 +3,8 @@ import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
 import ChoiceAliment from "../Components/ChoiceAliment";
 import RecapMenu from "../Components/RecapMenu";
+import "../style/MenuPage.css";
+
 export default class Menu extends Component {
   state = {
     aliments: [],
@@ -54,28 +56,30 @@ export default class Menu extends Component {
     return (
       <div>
         <h1>Menu Page</h1>
-        <RecapMenu
-          handleDelete={this.handleDelete}
-          selectedItems={this.state.selectedMenus}
-        />
-        {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
-        <ChoiceMenu
-          title="Menus"
-          handleAdd={this.handleAdd}
-          menus={this.getAdultMenus()}
-        />
-        <ChoiceMenu
-          title="Kids Menus"
-          handleAdd={this.handleAdd}
-          handleDelete={this.handleDelete}
-          menus={this.getKidMenus()}
-        />
-        <ChoiceAliment
-          title="On the go"
-          handleAdd={this.handleAdd}
-          handleDelete={this.handleDelete}
-          items={this.state.aliments}
-        />
+        <div className="renderall">
+          <RecapMenu
+            handleDelete={this.handleDelete}
+            selectedItems={this.state.selectedMenus}
+          />
+          {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
+          <ChoiceMenu
+            title="Menus"
+            handleAdd={this.handleAdd}
+            menus={this.getAdultMenus()}
+          />
+          <ChoiceMenu
+            title="Kids Menus"
+            handleAdd={this.handleAdd}
+            handleDelete={this.handleDelete}
+            menus={this.getKidMenus()}
+          />
+          <ChoiceAliment
+            title="On the go"
+            handleAdd={this.handleAdd}
+            handleDelete={this.handleDelete}
+            items={this.state.aliments}
+          />
+        </div>
       </div>
     );
   }
