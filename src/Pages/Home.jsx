@@ -9,8 +9,13 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
-        <Map handleClick={this.handleClick} />
+        <img
+          src="https://res.cloudinary.com/inga-bacher/image/upload/v1563806669/final_project_GoodToGO/nouveautes_i4rw2s.jpg"
+          alt="news"
+        />
+        <div>
+          <Map handleClick={this.handleClick} />
+        </div>
         <Footer />
       </div>
     );

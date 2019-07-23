@@ -39,10 +39,10 @@ export default class Signin extends Component {
             onSubmit={evt => handleSubmit(evt, props.signin)}
             onChange={handleChange}
           >
-            <h1 className="title">Signin</h1>
-            <label htmlFor="email">email</label>
+            <h1 className="title">Login</h1>
+            <label htmlFor="email">Email</label>
             <input id="email" name="email" type="email" defaultValue={email} />
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
             <input
               name="password"
               id="password"
