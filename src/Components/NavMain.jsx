@@ -17,7 +17,7 @@ function NavMain() {
     <div className="navbar">
       <div className="logo">
         <div className="logo-image">
-          <NavLink to="/">
+          <NavLink to="/home">
             <img
               className="logo-burger"
               src={burger}
@@ -37,22 +37,22 @@ function NavMain() {
               <p>Menu</p>
             </div>
           </NavLink>
-          <NavLink to="/map">
+          {/* <NavLink to="/map">
             <div className="ico">
               <i className="fas fa-map-pin fa-2x" />
               <p>Map</p>
             </div>
-          </NavLink>
-          <NavLink to="/login">
-            <div className="ico">
-              <i className="far fa-user fa-2x" />
-              <p>Log In</p>
-            </div>
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/signin">
             <div className="ico">
+              <i className="far fa-user fa-2x" />
+              <p>Login</p>
+            </div>
+          </NavLink>
+          <NavLink to="/signup">
+            <div className="ico">
               <i className="fas fa-sign-in-alt fa-2x" />
-              <p>Sign In</p>
+              <p>Sign Up</p>
             </div>
           </NavLink>
         </div>

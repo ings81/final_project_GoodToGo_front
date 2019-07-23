@@ -8,14 +8,13 @@ export default class RecapMenu extends Component {
     selectedMenus.splice(index, 1);
     this.setState({ selectedMenus });
   };
-
   render();
   return (
     <div>
-      <RecapMenu
+      <RecapMenu 
         handleDelete={this.handleDelete}
         selectedItems={this.state.selectedMenus}
-      />
+       />
     </div>
   );
-};
+}

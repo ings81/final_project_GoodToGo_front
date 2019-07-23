@@ -56,7 +56,7 @@ export default class Signup extends Component {
     const { firstname, lastname, email, password } = this.state;
     return (
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-        <h1 className="title">Signup</h1>
+        <h1 className="title">Sign Up</h1>
         <label htmlFor="name">Firstname</label>
         <input
           name="firstname"
