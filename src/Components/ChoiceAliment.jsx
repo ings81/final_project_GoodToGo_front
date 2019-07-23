@@ -9,19 +9,20 @@ const ChoiceAliment = ({ title, items, handleAdd, handleDelete }) => {
   return (
     <div>
       <h1>{title}</h1>
-      <div className="item">
+      <div className="menu">
         {items.map(item => (
-          <div className="menu-case">
-            <button onClick={e => handleAdd(item)}>Plus</button>
+          <div className="menu-case-ali">
             <div>
               <img src={item.image} alt={item.name} />
               <p>{item.title}</p>
             </div>
 
-            <p>{item.description}</p>
-            <p>
-              <span>{item.price}</span>€
-            </p>
+            <div className="price-plus">
+              <button onClick={e => handleAdd(item)}>Plus</button>
+              <p>
+                <span>{item.price}</span>€
+              </p>
+            </div>
           </div>
         ))}
       </div>

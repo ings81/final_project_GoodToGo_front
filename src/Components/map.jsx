@@ -31,11 +31,14 @@ export class MapContainer extends Component {
   }
 
   onMarkerClick = (props, marker, e) => {
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
+    this.setState(
+      {
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+      },
+      () => this.props.handleClick(this.state.selectedPlace)
+    );
   };
 
   displayMarkers = () => {
@@ -49,7 +52,7 @@ export class MapContainer extends Component {
             lat: store.latitude,
             lng: store.longitude
           }}
-          onClick={() => this.props.handleClick(store.name)}
+          onClick={this.onMarkerClick}
         />
       );
     });

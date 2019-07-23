@@ -1,8 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap");
+
+.navbar {
+  font-family: "PT Sans Narrow", sans-serif;
+}
 .logo {
+  color: white;
   display: flex;
   justify-content: space-between;
-  color: black;
   background-color: rgba(211, 211, 211, 0.22);
+  height: 12%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgb(204, 162, 162);
+  overflow-x: hidden;
 }
 
 .logo-burger {
@@ -13,7 +25,8 @@
 }
 
 .logo-image a {
-  width: 150px;
+  width: 70px;
+  margin: auto;
 }
 
 .left-logo {
