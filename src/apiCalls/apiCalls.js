@@ -5,3 +5,6 @@ export const getAllAliments = () =>
 
 export const getAllMenu = () =>
   axios.get(process.env.REACT_APP_BACKEND_URL + "/api/menu");
+
+export const getUser = () =>
+  axios.get(process.env.REACT_APP_BACKEND_URL + "/api/user/id");

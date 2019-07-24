@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getAllMenu, getAllAliments, getUser } from "../apiCalls/apiCalls";
+import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
 import ChoiceAliment from "../Components/ChoiceAliment";
 import RecapMenu from "../Components/RecapMenu";
