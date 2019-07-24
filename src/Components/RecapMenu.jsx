@@ -5,15 +5,17 @@ import { NavLink } from "react-router-dom";
 const RecapMenu = ({ selectedItems, handleDelete }) => {
   return (
     <div>
-      <h1>Recap</h1>
       {selectedItems.map((item, i) => (
         <div key={i}>
-          <p>{item.title}</p>
+          <p style={{textAlign:"center",fontWeight:"bold"}}>{item.title}</p>
+          <img src={item.image} alt="item" style={{width:"7em"}}></img>
           <button onClick={e => handleDelete(item)}>Moins</button>
         </div>
       ))}
-      <DisplayPrice items={selectedItems} />
+      <div className="display-price">
+      <DisplayPrice items={selectedItems}  />
       <NavLink to="/payment">PAY NOW</NavLink>
+      </div>
     </div>
   );
 };

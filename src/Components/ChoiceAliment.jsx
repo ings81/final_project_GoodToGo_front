@@ -1,5 +1,5 @@
 import React from "react";
-import "./../style/Aliment.css";
+import "../style/MenuPage.css";
 
 const ChoiceAliment = ({ title, items, handleAdd, handleDelete }) => {
   if (!items) {
@@ -9,19 +9,19 @@ const ChoiceAliment = ({ title, items, handleAdd, handleDelete }) => {
   return (
     <div>
       <h1>{title}</h1>
-      <div className="menu">
+      <div className="alim">
         {items.map(item => (
           <div className="menu-case-ali">
             <div>
               <img src={item.image} alt={item.name} />
-              <p>{item.title}</p>
+              <p style={{textAlign:"center"}}>{item.title}</p>
             </div>
 
             <div className="price-plus">
-              <button onClick={e => handleAdd(item)}>Plus</button>
-              <p>
+            <p style={{fontWeight:"bold"}}>
                 <span>{item.price}</span>€
               </p>
+              <button onClick={e => handleAdd(item)}>Plus</button>
             </div>
           </div>
         ))}

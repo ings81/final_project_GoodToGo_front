@@ -10,15 +10,15 @@ const ChoiceMenu = ({ title, menus, handleAdd, handleDelete }) => {
           <div className="menu-case">
             <div>
               <img src={menu.image} alt={menu.name} />
-              <p>{menu.title}</p>
+              <p className="title">{menu.title}</p>
             </div>
 
-            <p>{menu.description}</p>
+            <p className="description">{menu.description}</p>
             <div className="price-plus">
-              <p>
+              <p style={{ fontWeight: "bold" }}>
                 <span>{menu.price}</span>€
               </p>
-              <button onClick={e => handleAdd(menu)}>Plus</button>
+              <button onClick={e => handleAdd(menu)}>Commander</button>
             </div>
           </div>
         ))}

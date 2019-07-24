@@ -10,7 +10,8 @@ export default class Menu extends Component {
     user: [],
     aliments: [],
     menus: [],
-    selectedMenus: []
+    selectedMenus: [],
+    selectedAliments: []
   };
   componentDidMount() {
     Promise.all([getAllAliments(), getAllMenu()])
@@ -30,7 +31,7 @@ export default class Menu extends Component {
     return this.state.menus.filter(menu => menu.category === "kid");
   };
 
-  handleAdd = menu => {
+  handleAdd =menu => {
     // const tmpselectedMenus = [...this.state.selectedMenu];
     // tmpselectedMenus.push(menu);
     // this.setState({selectedMenus: tmpselectedMenus})
@@ -85,11 +86,11 @@ export default class Menu extends Component {
             />
           </div>
           <div className="asideRecap">
-            <h1>Recap Commande</h1>
-            <RecapMenu
+            <h1 style={{textAlign:"center",color:"white",textShadow:"grey 2px 2px"}}>Recap Commande</h1>
+            <div className="display-price"><RecapMenu
               handleDelete={this.handleDelete}
               selectedItems={this.props.currentMenus}
-            />
+            /></div>
           </div>
         </div>
       </div>

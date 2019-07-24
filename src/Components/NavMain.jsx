@@ -32,9 +32,9 @@ function NavMain() {
           <p>"The Fastest way to get on the road"</p>
         </div>
 
-        <div className="icones">
+        <div className="icones" style={{ textDecoration: "none" }}>
           <NavLink to="/menu">
-            <div className="ico">
+            <div style={{ textDecoration: "none" }} className="ico">
               <i className="fas fa-hamburger fa-2x" />
               <p>Menu</p>
             </div>
@@ -45,7 +45,7 @@ function NavMain() {
               <p>Login</p>
             </div>
           </NavLink>
-          <NavLink to="/signup">
+          <NavLink style={{ textDecoration: "none" }} to="/signup">
             <div className="ico">
               <i className="fas fa-sign-in-alt fa-2x" />
               <p>Sign Up</p>

@@ -22,7 +22,7 @@ const DisplayPrice = ({ items }) => {
   const price = getTotalPrice(items);
   return (
     <div>
-      <p>
+      <p style={{fontWeight:"bold"}}>
         <span>{price}</span>€
       </p>
     </div>
