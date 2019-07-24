@@ -5,6 +5,8 @@ import burger from "../images/Burger_King.svg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/NavMain.css";
 import { NavLink } from "react-router-dom";
+import { AuthConsumer } from "../auth/Guard";
+import SignoutIcon from "../auth/signoutIcon";
 
 function NavMain() {
   //   const myRef = React.createRef();
@@ -17,7 +19,7 @@ function NavMain() {
     <div className="navbar">
       <div className="logo">
         <div className="logo-image">
-          <NavLink to="/">
+          <NavLink to="/home">
             <img
               className="logo-burger"
               src={burger}
@@ -26,8 +28,8 @@ function NavMain() {
           </NavLink>
         </div>
         <div className="left-logo">
-          <h1>GOOD TO GO</h1>
-          <p>the fastest way to get to the road</p>
+          <h1>GoodToGO</h1>
+          <p>"The Fastest way to get on the road"</p>
         </div>
 
         <div className="icones">
@@ -37,24 +39,44 @@ function NavMain() {
               <p>Menu</p>
             </div>
           </NavLink>
-          <NavLink to="/map">
+          {/* <NavLink to="/map">
             <div className="ico">
               <i className="fas fa-map-pin fa-2x" />
               <p>Map</p>
             </div>
-          </NavLink>
-          <NavLink to="/login">
-            <div className="ico">
-              <i className="far fa-user fa-2x" />
-              <p>Log In</p>
-            </div>
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/signin">
             <div className="ico">
-              <i className="fas fa-sign-in-alt fa-2x" />
-              <p>Sign In</p>
+              <i className="far fa-user fa-2x" />
+              <p>Login</p>
             </div>
           </NavLink>
+          <NavLink to="/signup">
+            <div className="ico">
+              <i className="fas fa-sign-in-alt fa-2x" />
+              <p>Sign Up</p>
+            </div>
+          </NavLink>
+          <AuthConsumer>
+            {({ loginStatus, signout }) =>
+              loginStatus === true ? (
+                <React.Fragment>
+                  <NavLink
+                    activeClassName="is-active"
+                    className="icon auth fa fa-user-circle fa-lg"
+                    to="/dashboard"
+                  />
+                  <SignoutIcon signout={signout} />
+                </React.Fragment>
+              ) : (
+                <NavLink
+                  activeClassName="is-active"
+                  className="icon auth fa fa-user fa-lg"
+                  to="/signin"
+                />
+              )
+            }
+          </AuthConsumer>
         </div>
       </div>
     </div>

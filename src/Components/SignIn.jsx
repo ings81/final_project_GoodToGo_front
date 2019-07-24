@@ -11,11 +11,13 @@ export default class Signin extends Component {
     // the handleSubmit method here receives 2 params
     // 1 - the classic event object
     // 2 - the signin function, passed by the AuthConsumer
+    console.log("woot?");
     evt.preventDefault();
     signin(status => {
-      console.log(status);
+      console.log("here", status);
       // this callback is executed inside the Provider !!!
-      this.props.redirect("/home");
+      // console.log(this.props);
+      this.props.redirect("/menu");
     }, this.state);
   };
 

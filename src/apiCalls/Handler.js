@@ -17,7 +17,7 @@ export default class APIHandler extends HTTPRequestChecker {
   constructor(url) {
     super(url);
     this.name = "APIHandler";
-    this.url = url || process.env.REACT_APP_BACKEND_API;
+    this.url = url || process.env.REACT_APP_BACKEND_URL;
     if (!this.url) throw new Error("A URL must be specified as target domain.");
     this.api = axios.create({
       baseURL: this.url

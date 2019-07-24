@@ -12,10 +12,10 @@ export default class Signup extends Component {
     password: "1234"
   };
 
-  constructor() {
-    super();
-    this.avatarRef = React.createRef();
-  }
+  // constructor() {
+  //   super();
+  //   this.avatarRef = React.createRef();
+  // }
 
   // @todo => code this function to validate form according your needs
   checkAllFields() {
@@ -45,7 +45,7 @@ export default class Signup extends Component {
       .then(serverRes => {
         // everything is fine, redirect to dashboard
         console.log(this.props);
-        this.props.redirect("/home");
+        this.props.redirect("/menu");
         console.log(serverRes);
       })
       .catch(serverErr => console.error(serverErr.response));
@@ -56,7 +56,7 @@ export default class Signup extends Component {
     const { firstname, lastname, email, password } = this.state;
     return (
       <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-        <h1 className="title">Signup</h1>
+        <h1 className="title">Sign Up</h1>
         <label htmlFor="name">Firstname</label>
         <input
           name="firstname"
@@ -83,7 +83,7 @@ export default class Signup extends Component {
         />
 
         <hr />
-        <button className="btn">ok</button>
+        <button className="btn">Register</button>
       </form>
     );
   }
