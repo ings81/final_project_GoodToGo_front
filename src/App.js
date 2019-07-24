@@ -5,7 +5,11 @@ import Payment from "./Pages/Payment";
 import PageAuth from "./Pages/Auth";
 import { Switch, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faAngleRight, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faUserCircle,
+  faSignOutAlt
+} from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import Menu from "./Pages/MenuPage";
 import ProtectedRoute from "./auth/ProtectedRoute";
@@ -14,7 +18,7 @@ import "./style/MenuPage.css";
 // import Signin from "./Components/SignIn";
 import Dashboard from "./dashboard/Dashboard";
 
-library.add(faUser, faAngleRight, faUserCircle);
+library.add(faUser, faAngleRight, faUserCircle, faSignOutAlt);
 
 function App() {
   return (

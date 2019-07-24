@@ -51,6 +51,7 @@ export default class Signin extends Component {
               type="password"
               defaultValue={password}
             />
+            <hr />
             <button className="btn">ok</button>
           </form>
         )}

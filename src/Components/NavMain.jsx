@@ -39,12 +39,6 @@ function NavMain() {
               <p>Menu</p>
             </div>
           </NavLink>
-          {/* <NavLink to="/map">
-            <div className="ico">
-              <i className="fas fa-map-pin fa-2x" />
-              <p>Map</p>
-            </div>
-          </NavLink> */}
           <NavLink to="/signin">
             <div className="ico">
               <i className="far fa-user fa-2x" />
@@ -61,17 +55,18 @@ function NavMain() {
             {({ loginStatus, signout }) =>
               loginStatus === true ? (
                 <React.Fragment>
-                  <NavLink
+                  {/* <NavLink
                     activeClassName="is-active"
                     className="icon auth fa fa-user-circle fa-lg"
                     to="/dashboard"
-                  />
+                  /> */}
                   <SignoutIcon signout={signout} />
+                  <p>Log Out</p>
                 </React.Fragment>
               ) : (
                 <NavLink
                   activeClassName="is-active"
-                  className="icon auth fa fa-user fa-lg"
+                  className="icon auth fas fa-sign-out-alt "
                   to="/signin"
                 />
               )

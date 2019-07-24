@@ -4,7 +4,7 @@ import React from "react";
 export default function NavMain({ signout }) {
   return (
     <span
-      className="is-clickable auth fa fa-times fa-lg"
+      className="is-clickable auth fas fa-sign-out-alt"
       onClick={() => signout(res => console.log(res))}
     />
   );
