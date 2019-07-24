@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import React, { Component } from "react";
 import Home from "./Pages/Home";
 import NavMain from "./Components/NavMain";
 import Payment from "./Pages/Payment";
@@ -20,22 +21,71 @@ import Dashboard from "./dashboard/Dashboard";
 
 library.add(faUser, faAngleRight, faUserCircle, faSignOutAlt);
 
-function App() {
-  return (
-    <>
-      <NavMain />
-      <div className="App">
-        <Switch>
-          {/* <Redirect exact from="/" to="/home" /> */}
-          <Route path="/menu" component={Menu} />
-          <Route exact path="/" component={Home} />
-          <Route path={["/signin", "/signup"]} component={PageAuth} />
-          <Route path="/payment" component={Payment} />
-          <ProtectedRoute path="/dashboard" component={Dashboard} />
-        </Switch>
-      </div>
-    </>
-  );
+// function App() {
+
+//   return (
+//     <>
+//       <NavMain />
+//       <div className="App">
+//         <Switch>
+//           {/* <Redirect exact from="/" to="/home" /> */}
+//           <Route path="/menu" component={Menu} />
+//           <Route exact path="/" component={Home} />
+
+//           <Route path={["/signin", "/signup"]} component={PageAuth} />
+//           {/* <Route path="/payment" component={Payment} /> */}
+//           <ProtectedRoute path="/payment" component={Payment} />
+//           <ProtectedRoute path="/dashboard" component={Dashboard} />
+//         </Switch>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
+
+export class App extends Component {
+  state = {
+    currentMenus: []
+  };
+
+  handleCurrentMenu = menu => {
+    this.setState({ currentMenus: [...this.state.currentMenus, menu] });
+  };
+
+  render() {
+    return (
+      <>
+        <NavMain />
+        <div className="App">
+          <Switch>
+            {/* <Redirect exact from="/" to="/home" /> */}
+            <Route
+              path="/menu"
+              render={props => (
+                <Menu
+                  {...props}
+                  currentMenus={this.state.currentMenus}
+                  handleCurrentMenu={this.handleCurrentMenu}
+                />
+              )}
+            />
+            <Route exact path="/" component={Home} />
+            <Route path={["/signin", "/signup"]} component={PageAuth} />
+            {/* <Route path="/payment" component={Payment} /> */}
+            {/* <ProtectedRoute path="/payment" component={Payment} /> */}
+            <ProtectedRoute
+              path="/payment"
+              render={props => (
+                <Payment {...props} currentMenus={this.state.currentMenus} />
+              )}
+            />
+            <ProtectedRoute path="/dashboard" component={Dashboard} />
+          </Switch>
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;

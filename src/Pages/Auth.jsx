@@ -12,11 +12,10 @@ export default function Auth(props) {
 
   var path = wantToSignIn ? "/signup" : "/signin";
 
-  function redirect(path) {
-    console.log("@redirect");
+  function redirect(path, action) {
     props.history.push(path);
   }
-
+  console.log(props, "from page auth");
   return (
     <React.Fragment>
       <p>

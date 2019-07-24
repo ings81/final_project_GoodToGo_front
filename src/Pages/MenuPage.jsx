@@ -10,8 +10,7 @@ export default class Menu extends Component {
     user: [],
     aliments: [],
     menus: [],
-    selectedMenus: [],
-    selectedAliments: []
+    selectedMenus: []
   };
   componentDidMount() {
     Promise.all([getAllAliments(), getAllMenu()])
@@ -51,6 +50,9 @@ export default class Menu extends Component {
   // handleAdd = item => {
   //   this.setState({ selectedAliments: [...this.state.selectedAliments, item] });
   // };
+
+  // static getDerivedStateFromProps(props,state)
+
   handleDelete = index => {
     const selectedAliments = [...this.state.selectedAliments];
     selectedAliments.splice(index, 1);
@@ -66,18 +68,18 @@ export default class Menu extends Component {
             {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
             <ChoiceMenu
               title="Menus"
-              handleAdd={this.handleAdd}
+              handleAdd={this.props.handleCurrentMenu}
               menus={this.getAdultMenus()}
             />
             <ChoiceMenu
               title="Kids Menus"
-              handleAdd={this.handleAdd}
+              handleAdd={this.props.handleCurrentMenu}
               handleDelete={this.handleDelete}
               menus={this.getKidMenus()}
             />
             <ChoiceAliment
               title="On the go"
-              handleAdd={this.handleAdd}
+              handleAdd={this.props.handleCurrentMenu}
               handleDelete={this.handleDelete}
               items={this.state.aliments}
             />
@@ -86,7 +88,7 @@ export default class Menu extends Component {
             <h1>Recap Commande</h1>
             <RecapMenu
               handleDelete={this.handleDelete}
-              selectedItems={this.state.selectedMenus}
+              selectedItems={this.props.currentMenus}
             />
           </div>
         </div>
@@ -94,3 +96,42 @@ export default class Menu extends Component {
     );
   }
 }
+
+// const MenuPage = () => {
+//   return (
+//     <div>
+//     <h1>Menu Page</h1>
+//     <div className="big-container">
+//       <div className="renderall">
+//         {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
+//         <ChoiceMenu
+//           title="Menus"
+//           handleAdd={this.handleAdd}
+//           menus={this.getAdultMenus()}
+//         />
+//         <ChoiceMenu
+//           title="Kids Menus"
+//           handleAdd={this.handleAdd}
+//           handleDelete={this.handleDelete}
+//           menus={this.getKidMenus()}
+//         />
+//         <ChoiceAliment
+//           title="On the go"
+//           handleAdd={this.handleAdd}
+//           handleDelete={this.handleDelete}
+//           items={this.state.aliments}
+//         />
+//       </div>
+//       <div className="asideRecap">
+//         <h1>Recap Commande</h1>
+//         <RecapMenu
+//           handleDelete={this.handleDelete}
+//           selectedItems={this.state.selectedMenus}
+//         />
+//       </div>
+//     </div>
+//   </div>
+//   )
+// }
+
+// export default MenuPage
