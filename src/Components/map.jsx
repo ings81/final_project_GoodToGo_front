@@ -4,10 +4,10 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       showingInfoWindow: false,
       selectedPlace: {},
-
       activeMarker: {},
 
       stores: [
@@ -31,14 +31,11 @@ export class MapContainer extends Component {
   }
 
   onMarkerClick = (props, marker, e) => {
-    this.setState(
-      {
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
-      },
-      () => this.props.handleClick(this.state.selectedPlace)
-    );
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
   };
 
   displayMarkers = () => {
@@ -52,7 +49,7 @@ export class MapContainer extends Component {
             lat: store.latitude,
             lng: store.longitude
           }}
-          onClick={this.onMarkerClick}
+          onClick={() => this.props.handleClick(store.name)}
         />
       );
     });

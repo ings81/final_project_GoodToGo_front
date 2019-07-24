@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Map from "../Components/map";
+import Map from "../Components/Map";
 import Footer from "../Components/Footer";
 
 export default class Home extends Component {

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Payment = () => {
+const Payment = props => {
+  console.log(props);
   return (
     <div className="d-flex col cb-container">
       <h3>Pay</h3>

@@ -85,6 +85,7 @@ class AuthProvider extends React.Component {
 
   render() {
     console.log("je suis passé par la");
+    console.log(this.state);
     // return a context Provider ...
     return (
       <AuthContext.Provider

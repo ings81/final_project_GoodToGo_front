@@ -32,7 +32,7 @@ export default class Signin extends Component {
     const { handleChange, handleSubmit } = this;
     const { email, password } = this.state;
     console.log("je suis passé par la signin");
-
+    console.log(this.props, "props from signin");
     return (
       <AuthConsumer>
         {props => (
