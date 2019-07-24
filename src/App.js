@@ -59,7 +59,7 @@ export class App extends Component {
         <NavMain />
         <div className="App">
           <Switch>
-            {/* <Redirect exact from="/" to="/home" /> */}
+            <Route exact path="/" component={Home} />
             <Route
               path="/menu"
               render={props => (
