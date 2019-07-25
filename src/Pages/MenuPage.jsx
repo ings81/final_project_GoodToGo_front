@@ -87,10 +87,9 @@ export default class Menu extends Component {
               Recap Commande
             </h1>
             <div className="display-price">
-<<<<<<< HEAD
               <div className="bigrecap">
                 <RecapMenu
-                  handleDelete={this.handleDelete}
+                  handleDelete={this.props.handleDelete}
                   selectedItems={this.props.currentMenus}
                 />
               </div>
@@ -101,13 +100,6 @@ export default class Menu extends Component {
               handleDelete={this.handleDelete}
               selectedItems={this.props.currentMenus}
             />
-=======
-              <RecapMenu
-                handleDelete={this.props.handleDelete}
-                selectedItems={this.props.currentMenus}
-              />
-            </div>
->>>>>>> 5443ba6a4a39dcb4bc4006bc0ecb0e31ace5a069
           </div>
         </div>
       </div>
