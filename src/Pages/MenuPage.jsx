@@ -3,6 +3,7 @@ import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
 import ChoiceAliment from "../Components/ChoiceAliment";
 import RecapMenu from "../Components/RecapMenu";
+import MiniRecapMenu from "../Components/MiniRecapMenu";
 import "../style/MenuPage.css";
 
 export default class Menu extends Component {
@@ -86,11 +87,27 @@ export default class Menu extends Component {
               Recap Commande
             </h1>
             <div className="display-price">
+<<<<<<< HEAD
+              <div className="bigrecap">
+                <RecapMenu
+                  handleDelete={this.handleDelete}
+                  selectedItems={this.props.currentMenus}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="minirecap">
+            <MiniRecapMenu
+              handleDelete={this.handleDelete}
+              selectedItems={this.props.currentMenus}
+            />
+=======
               <RecapMenu
                 handleDelete={this.props.handleDelete}
                 selectedItems={this.props.currentMenus}
               />
             </div>
+>>>>>>> 5443ba6a4a39dcb4bc4006bc0ecb0e31ace5a069
           </div>
         </div>
       </div>
