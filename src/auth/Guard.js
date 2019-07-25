@@ -27,7 +27,7 @@ class AuthProvider extends React.Component {
   constructor() {
     super();
     this.state = {
-      loginStatus: {}, // by default, user is not signed-in...
+      loginStatus: false, // by default, user is not signed-in...
       // i started with a false value but then ...
       // i've put an object literal here just to avoid a weird refresh bug ... still investigating
       user: null
@@ -85,14 +85,14 @@ class AuthProvider extends React.Component {
 
   render() {
     console.log("je suis passé par la");
-    console.log(this.state);
+    console.log(this.state, "---------------");
     // return a context Provider ...
     return (
       <AuthContext.Provider
         // below, the values exposed by the provider (to be consumed later ;)
         value={{
           // exposed properties
-          user: this.user,
+          user: this.state.user,
           loginStatus: this.state.loginStatus,
           // exposed methods
           isLoggedIn: this.isLoggedIn,

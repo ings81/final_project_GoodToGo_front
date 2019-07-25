@@ -4,7 +4,7 @@ import Home from "./Pages/Home";
 import NavMain from "./Components/NavMain";
 import Payment from "./Pages/Payment";
 import PageAuth from "./Pages/Auth";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faAngleRight,
@@ -59,6 +59,7 @@ export class App extends Component {
         <NavMain />
         <div className="App">
           <Switch>
+            <Redirect from="/home" to="/" />
             <Route exact path="/" component={Home} />
             <Route
               path="/menu"
@@ -70,17 +71,13 @@ export class App extends Component {
                 />
               )}
             />
-            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/" component={Home} />  */}
             <Route path={["/signin", "/signup"]} component={PageAuth} />
             {/* <Route path="/payment" component={Payment} /> */}
             {/* <ProtectedRoute path="/payment" component={Payment} /> */}
-            <ProtectedRoute
-              path="/payment"
-              render={props => (
-                <Payment {...props} currentMenus={this.state.currentMenus} />
-              )}
-            />
-            <ProtectedRoute path="/dashboard" component={Dashboard} />
+            <ProtectedRoute path="/payment" component={Payment} />
+            )} />
+            {/* <ProtectedRoute path="/dashboard" component={Dashboard} /> */}
           </Switch>
         </div>
       </>

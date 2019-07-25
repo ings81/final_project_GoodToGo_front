@@ -1,7 +1,10 @@
 import React from "react";
 
 const Payment = props => {
-  console.log(props);
+  console.log(props, "yooooo payment props");
+  const redirectToRecap = () => {
+    props.history.push("/recap");
+  };
   return (
     <div className="d-flex col cb-container">
       <h3>Pay</h3>
@@ -13,7 +16,9 @@ const Payment = props => {
       <input type="date" />
       <label>Security Code</label>
       <input type="text" />
-      <button className="button">Validate</button>
+      <button onClick={redirectToRecap} className="button">
+        Validate
+      </button>
     </div>
   );
 };
