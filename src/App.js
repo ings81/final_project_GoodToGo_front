@@ -13,11 +13,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import Menu from "./Pages/MenuPage";
+import Recap from "./Pages/RecapMenu";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import "./style/App.css";
 import "./style/MenuPage.css";
 // import Signin from "./Components/SignIn";
-import Dashboard from "./dashboard/Dashboard";
+// import Dashboard from "./dashboard/Dashboard";
 
 library.add(faUser, faAngleRight, faUserCircle, faSignOutAlt);
 
@@ -71,8 +72,8 @@ export class App extends Component {
                 />
               )}
             />
-            {/* <Route exact path="/" component={Home} />  */}
             <Route path={["/signin", "/signup"]} component={PageAuth} />
+            <Route path="/recap" component={Recap} />
             {/* <Route path="/payment" component={Payment} /> */}
             {/* <ProtectedRoute path="/payment" component={Payment} /> */}
             <ProtectedRoute path="/payment" component={Payment} />
