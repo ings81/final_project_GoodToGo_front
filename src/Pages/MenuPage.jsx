@@ -31,34 +31,24 @@ export default class Menu extends Component {
     return this.state.menus.filter(menu => menu.category === "kid");
   };
 
-  handleAdd =menu => {
+  handleAdd = menu => {
     // const tmpselectedMenus = [...this.state.selectedMenu];
     // tmpselectedMenus.push(menu);
     // this.setState({selectedMenus: tmpselectedMenus})
     this.setState({ selectedMenus: [...this.state.selectedMenus, menu] });
   };
 
-  handleDelete = index => {
-    const selectedMenus = [...this.state.selectedMenus];
-    selectedMenus.splice(index, 1);
-    this.setState({ selectedMenus });
-    //Probleme dans le cas ou dans le tableau il y aurait plusieurs elements avec la meme _id
-    // const filtered = this.state.selectedMenus.filter(items => {
-    //   return items._id !== menu._id;
-    // });
-    // this.setState({ selectedMenus: filtered });
-  };
   // handleAdd = item => {
   //   this.setState({ selectedAliments: [...this.state.selectedAliments, item] });
   // };
 
   // static getDerivedStateFromProps(props,state)
 
-  handleDelete = index => {
-    const selectedAliments = [...this.state.selectedAliments];
-    selectedAliments.splice(index, 1);
-    this.setState({ selectedAliments });
-  };
+  // handleDelete = index => {
+  //   const selectedAliments = [...this.state.selectedAliments];
+  //   selectedAliments.splice(index, 1);
+  //   this.setState({ selectedAliments });
+  // };
 
   render() {
     return (
@@ -81,58 +71,29 @@ export default class Menu extends Component {
             <ChoiceAliment
               title="On the go"
               handleAdd={this.props.handleCurrentMenu}
-              handleDelete={this.handleDelete}
+              handleDelete={this.props.handleDelete}
               items={this.state.aliments}
             />
           </div>
           <div className="asideRecap">
-            <h1 style={{textAlign:"center",color:"white",textShadow:"grey 2px 2px"}}>Recap Commande</h1>
-            <div className="display-price"><RecapMenu
-              handleDelete={this.handleDelete}
-              selectedItems={this.props.currentMenus}
-            /></div>
+            <h1
+              style={{
+                textAlign: "center",
+                color: "white",
+                textShadow: "grey 2px 2px"
+              }}
+            >
+              Recap Commande
+            </h1>
+            <div className="display-price">
+              <RecapMenu
+                handleDelete={this.props.handleDelete}
+                selectedItems={this.props.currentMenus}
+              />
+            </div>
           </div>
         </div>
       </div>
     );
   }
 }
-
-// const MenuPage = () => {
-//   return (
-//     <div>
-//     <h1>Menu Page</h1>
-//     <div className="big-container">
-//       <div className="renderall">
-//         {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
-//         <ChoiceMenu
-//           title="Menus"
-//           handleAdd={this.handleAdd}
-//           menus={this.getAdultMenus()}
-//         />
-//         <ChoiceMenu
-//           title="Kids Menus"
-//           handleAdd={this.handleAdd}
-//           handleDelete={this.handleDelete}
-//           menus={this.getKidMenus()}
-//         />
-//         <ChoiceAliment
-//           title="On the go"
-//           handleAdd={this.handleAdd}
-//           handleDelete={this.handleDelete}
-//           items={this.state.aliments}
-//         />
-//       </div>
-//       <div className="asideRecap">
-//         <h1>Recap Commande</h1>
-//         <RecapMenu
-//           handleDelete={this.handleDelete}
-//           selectedItems={this.state.selectedMenus}
-//         />
-//       </div>
-//     </div>
-//   </div>
-//   )
-// }
-
-// export default MenuPage

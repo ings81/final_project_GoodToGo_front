@@ -7,14 +7,16 @@ const RecapMenu = ({ selectedItems, handleDelete }) => {
     <div>
       {selectedItems.map((item, i) => (
         <div key={i}>
-          <p style={{textAlign:"center",fontWeight:"bold"}}>{item.title}</p>
-          <img src={item.image} alt="item" style={{width:"7em"}}></img>
-          <button onClick={e => handleDelete(item)}>Moins</button>
+          <p style={{ textAlign: "center", fontWeight: "bold" }}>
+            {item.title}
+          </p>
+          <img src={item.image} alt="item" style={{ width: "7em" }} />
+          <button onClick={e => handleDelete(i)}>Moins</button>
         </div>
       ))}
       <div className="display-price">
-      <DisplayPrice items={selectedItems}  />
-      <NavLink to="/payment">PAY NOW</NavLink>
+        <DisplayPrice items={selectedItems} />
+        <NavLink to="/payment">PAY NOW</NavLink>
       </div>
     </div>
   );

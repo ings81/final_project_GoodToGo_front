@@ -1,9 +1,11 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 // import "font-awesome/css/font-awesome.min.css";
 
-export default function NavMain({ signout }) {
+function NavMain({ signout, history }) {
   const redirectMe = isLoggedin => {
     isLoggedin();
+    history.push("/home");
   };
 
   return (
@@ -13,3 +15,5 @@ export default function NavMain({ signout }) {
     />
   );
 }
+
+export default withRouter(NavMain);
