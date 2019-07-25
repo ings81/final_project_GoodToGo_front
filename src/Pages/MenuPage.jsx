@@ -3,6 +3,7 @@ import { getAllMenu, getAllAliments } from "../apiCalls/apiCalls";
 import ChoiceMenu from "../Components/ChoiceMenu";
 import ChoiceAliment from "../Components/ChoiceAliment";
 import RecapMenu from "../Components/RecapMenu";
+import MiniRecapMenu from "../Components/MiniRecapMenu";
 import "../style/MenuPage.css";
 
 export default class Menu extends Component {
@@ -31,7 +32,7 @@ export default class Menu extends Component {
     return this.state.menus.filter(menu => menu.category === "kid");
   };
 
-  handleAdd =menu => {
+  handleAdd = menu => {
     // const tmpselectedMenus = [...this.state.selectedMenu];
     // tmpselectedMenus.push(menu);
     // this.setState({selectedMenus: tmpselectedMenus})
@@ -86,11 +87,29 @@ export default class Menu extends Component {
             />
           </div>
           <div className="asideRecap">
-            <h1 style={{textAlign:"center",color:"white",textShadow:"grey 2px 2px"}}>Recap Commande</h1>
-            <div className="display-price"><RecapMenu
+            <h1
+              style={{
+                textAlign: "center",
+                color: "white",
+                textShadow: "grey 2px 2px"
+              }}
+            >
+              Recap Commande
+            </h1>
+            <div className="display-price">
+              <div className="bigrecap">
+                <RecapMenu
+                  handleDelete={this.handleDelete}
+                  selectedItems={this.props.currentMenus}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="minirecap">
+            <MiniRecapMenu
               handleDelete={this.handleDelete}
               selectedItems={this.props.currentMenus}
-            /></div>
+            />
           </div>
         </div>
       </div>
