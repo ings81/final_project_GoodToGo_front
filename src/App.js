@@ -14,7 +14,7 @@ import {
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import Menu from "./Pages/MenuPage";
 import Recap from "./Pages/RecapMenu";
-import ProtectedRoute from "./auth/ProtectedRoute";
+// import ProtectedRoute from "./auth/ProtectedRoute";
 import "./style/App.css";
 import "./style/MenuPage.css";
 // import Signin from "./Components/SignIn";
@@ -63,9 +63,6 @@ export class App extends Component {
             />
             <Route path={["/signin", "/signup"]} component={PageAuth} />
             <Route path="/recap" component={Recap} />
-            {/* <Route path="/payment" component={Payment} /> */}
-            {/* <ProtectedRoute path="/payment" component={Payment} /> */}
-            {/* <ProtectedRoute path="/payment" component={Payment} /> */}
             <Route
               path="/payment"
               render={props => (

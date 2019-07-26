@@ -1,30 +1,5 @@
-<<<<<<< HEAD
-import React from "react";
-// import RecapMenu from "../Components/RecapMenu";
-import "../style/Recap.css";
-
-export default class RecapMenu {
-  // handleDelete = index => {
-  //   const selectedMenus = [...this.state.selectedMenus];
-  //   selectedMenus.splice(index, 1);
-  //   this.setState({ selectedMenus });
-  // };
-  render() {
-    return (
-      <div className="recap">
-        <div className="recapborder">
-          <h1>Récapitulatif Commande</h1>
-        </div>
-      </div>
-      /* <div className="recap">
-  <div className ="recapborder">
-  <h1>Récapitulatif Commande</h1><hr/>
-  <div/> */
-=======
 import React, { Component } from "react";
-import ChoiceMenu from "../Components/ChoiceMenu";
 import RecapMenu from "../Components/RecapMenu";
-import ChoiceAliment from "../Components/ChoiceAliment";
 import axios from "axios";
 
 const apiHandler = axios.create({
@@ -67,22 +42,26 @@ class Recap extends Component {
           ))}
           <p>{this.state.lastOrder.orderRef}</p>
         </div>
-        <div>
-          <h2>Historique de commandes</h2>
-          {this.state.purchases.map((purchase, i) => (
-            <div>
-              <div>Purchase n°{i + 1}</div>
-              {purchase.articles.map(article => (
-                <div>
-                  <p>{article.title}</p>
-                </div>
-              ))}
-              <p>{purchase.orderRef}</p>
-            </div>
-          ))}
+        <div className="display-price">
+          <div className="bigrecap">
+            <RecapMenu />
+          </div>
+          <div>
+            <h2>Historique de commandes</h2>
+            {this.state.purchases.map((purchase, i) => (
+              <div>
+                <div>Purchase n°{i + 1}</div>
+                {purchase.articles.map(article => (
+                  <div>
+                    <p>{article.title}</p>
+                  </div>
+                ))}
+                <p>{purchase.orderRef}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
->>>>>>> 5443ba6a4a39dcb4bc4006bc0ecb0e31ace5a069
     );
   }
 }

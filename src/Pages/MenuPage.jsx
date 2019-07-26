@@ -66,7 +66,7 @@ export default class Menu extends Component {
             <ChoiceMenu
               title="Kids Menus"
               handleAdd={this.props.handleCurrentMenu}
-              handleDelete={this.handleDelete}
+              handleDelete={this.props.handleDelete}
               menus={this.getKidMenus()}
             />
             <ChoiceAliment
@@ -87,10 +87,9 @@ export default class Menu extends Component {
               Recap Commande
             </h1>
             <div className="display-price">
-<<<<<<< HEAD
               <div className="bigrecap">
                 <RecapMenu
-                  handleDelete={this.handleDelete}
+                  handleDelete={this.props.handleDelete}
                   selectedItems={this.props.currentMenus}
                 />
               </div>
@@ -98,16 +97,9 @@ export default class Menu extends Component {
           </div>
           <div className="minirecap">
             <MiniRecapMenu
-              handleDelete={this.handleDelete}
+              handleDelete={this.props.handleDelete}
               selectedItems={this.props.currentMenus}
             />
-=======
-              <RecapMenu
-                handleDelete={this.props.handleDelete}
-                selectedItems={this.props.currentMenus}
-              />
-            </div>
->>>>>>> 5443ba6a4a39dcb4bc4006bc0ecb0e31ace5a069
           </div>
         </div>
       </div>
