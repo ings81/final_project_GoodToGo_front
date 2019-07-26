@@ -56,22 +56,24 @@ export class MapContainer extends Component {
   };
   render() {
     return (
-      <Map
-        style={{ width: "50%", height: "100%" }}
-        google={this.props.google}
-        zoom={8}
-        initialCenter={{ lat: 48.263823, lng: 2.721785 }}
-      >
-        {this.displayMarkers()}
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
+      <div className="map">
+        <Map
+          style={{ width: "50%", height: "auto" }}
+          google={this.props.google}
+          zoom={8}
+          initialCenter={{ lat: 47.48822, lng: 3.907722 }}
         >
-          <div>
-            <h1>{this.state.selectedPlace.name}</h1>
-          </div>
-        </InfoWindow>
-      </Map>
+          {this.displayMarkers()}
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+          >
+            <div>
+              <h1>{this.state.selectedPlace.name}</h1>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }

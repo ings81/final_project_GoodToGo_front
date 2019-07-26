@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:3000/menu -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="./React App_files/all.css">
+    <script src="./React App_files/js"></script>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap);</style><style type="text/css">.navbar {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.logo {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(47, 158, 247);
+  height: 12%;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.logo-burger {
+  width: inherit;
+}
+.logo-image {
+  display: flex;
+}
+
+.logo-image a {
+  width: 70px;
+  margin: auto;
+}
+
+.left-logo {
+  text-align: center;
+  margin: auto;
+}
+.left-logo h1 {
+  margin: auto;
+  font-size: 50px;
+}
+
+.left-logo p {
+  margin: auto;
+  font-size: 20px;
+}
+
+.icones {
+  display: flex;
+  width: 20%;
+  margin: auto 0;
+  justify-content: space-evenly;
+}
+
+.icones i {
+  width: 20px;
+}
+
+.icones a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 750px) {
+  .logo.logo-burger {
+    width: 3rem;
+  }
+  .left-logo h1 {
+    font-size: 30px;
+  }
+
+  .left-logo p {
+    font-size: 14px;
+  }
+  .ico p {
+    display: none;
+  }
+  .icones a {
+    margin: auto;
+    font-size: 0.5rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+}
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap);</style><style type="text/css">.menu {
+  padding: 20px 30px;
+  display: grid;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.alim {
+  padding: 20px 30px;
+  display: grid;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.menu-case {
+  border-color: rgb(115, 115, 115);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-bottom: 0;
+  /* border-radius: 20px; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.menu-case-ali {
+  border-color: rgb(115, 115, 115);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-bottom: 0;
+  /* border-radius: 20px; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.menu-case-ali img {
+  width: 13em;
+}
+
+.price-plus {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.renderall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.big-container {
+  width: 80%;
+}
+
+.asideRecap {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(208, 208, 208);
+  border: 2px solid black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 150px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+.menu-case p {
+  padding: 0;
+  margin: 0 auto;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.renderall button {
+  color: white;
+  width: 150px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "PT Sans Narrow", sans-serif;
+  border-radius: 5px;
+  border: none;
+  text-shadow: grey 2px 2px;
+  background-color: rgb(241, 181, 0);
+}
+
+.renderall button:hover {
+  background-color: rgb(132, 164, 66);
+}
+
+.renderall h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family: "PT Sans Narrow", sans-serif;
+  color: rgb(176, 5, 0);
+  font-weight: bold;
+  text-shadow: grey 2px 2px;
+}
+
+.description {
+  width: 300px;
+}
+
+.display-price {
+  display: flex;
+  flex-direction: column;
+  padding-left: 7px;
+}
+.home {
+  display: flex;
+  width: 100%;
+  height: 110vh;
+}
+
+.sub-home {
+  background-color: rgb(176, 5, 0);
+  color: white;
+  font-family: "PT Sans Narrow", sans-serif;
+  border-radius: 5px;
+  width: 50%;
+  height: 110vh;
+  font-size: 50px;
+}
+
+.sub-home h2 {
+  font-size: 8vh;
+  margin: auto;
+  padding: 8%;
+  text-align: center;
+}
+
+.sub-sub-home {
+  font-family: "PT Sans Narrow", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3vh;
+  padding: 4px;
+  margin: auto;
+  width: 37vh;
+}
+.sub-sub-home i {
+  font-size: 5vh;
+  text-align: -webkit-center;
+}
+
+.minirecap {
+  color: black;
+  width: 80%;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "PT Sans Narrow", sans-serif;
+  border-radius: 30px;
+  border: 2px solid black;
+  text-shadow: grey 2px 2px;
+  background-color: rgb(208, 208, 208);
+  margin: 30px;
+  height: 10%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+@media screen and (max-width: 1100px) {
+  .menu {
+    grid-template-columns: 1fr 1fr;
+    /* background-color: blueviolet; */
+    margin: auto;
+  }
+  .alim {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bigrecap {
+    display: none;
+  }
+  .asideRecap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .menu {
+    grid-template-columns: 1fr;
+    /* background-color: pink; */
+    margin: auto;
+  }
+  .alim {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bigrecap {
+    display: none;
+  }
+  .asideRecap {
+    display: none;
+  }
+  .title {
+    margin: auto;
+  }
+
+  body {
+    background-color: tomato;
+  }
+
+  .sub-home {
+    width: 100%;
+  }
+  .sub-sub-home {
+    font-size: 2vh;
+    padding: 2px;
+    margin: auto;
+    width: 17vh;
+  }
+  .sub-sub-home i {
+    font-size: 3vh;
+  }
+  .sub-home h2 {
+    font-size: 5vh;
+  }
+  .home {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .menu {
+    /* background-color: blue; */
+    margin: auto;
+  }
+  .minirecap {
+    display: none;
+  }
+}
+</style><style type="text/css">.d-flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 25px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: medium;
+  font-style: oblique;
+}
+</style><script type="text/javascript" charset="UTF-8" src="./React App_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./React App_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./React App_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./React App_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./React App_files/stats.js"></script><script charset="utf-8" src="./React App_files/main.11046d2c5a23cb6dd41f.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.57a2d19ffd9e65eb90af.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.085f3bece18b31c72f53.hot-update.js"></script></head>
+  <body>
+    <script src="./React App_files/js"></script>
+    <script type="text/javascript" src="./React App_files/App.js"></script>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="navbar"><div class="logo"><div class="logo-image"><a href="http://localhost:3000/home"><img class="logo-burger" src="./React App_files/Burger_King.svg.fb192a45.png" alt="gros logo de burger"></a></div><div class="left-logo"><h1>GoodToGO</h1><p>"The Fastest way to get on the road"</p></div><div class="icones" style="text-decoration: none;"><a aria-current="page" class="active" href="http://localhost:3000/menu"><div class="ico" style="text-decoration: none;"><i class="fas fa-hamburger fa-2x"></i><p>Menu</p></div></a><a href="http://localhost:3000/signin"><div class="ico"><i class="far fa-user fa-2x"></i><p>Login</p></div></a><a href="http://localhost:3000/signup" style="text-decoration: none;"><div class="ico"><i class="fas fa-sign-in-alt fa-2x"></i><p>Sign Up</p></div></a><span class="is-clickable auth fas fa-sign-out-alt"></span><p>Log Out</p></div></div></div><div class="App"><div><div class="big-container"><div class="renderall"><div style="
+    margin: auto;
+"><h1 class="title">Menus</h1><div class="menu"><div class="menu-case"><div><img src="./React App_files/whopperMenu_tq3je8.png"><p class="title">whopper menu</p></div><p class="description">Craquez pour LE mythe. Une viande de boeuf grillée à la flamme, une mayonnaise onctueuse, des tomates fraîches, une salade croquante, des cornichons et des oignons.</p><div class="price-plus"><p style="font-weight: bold;"><span>9</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/menuWrapLouisiane_augfcq.png"><p class="title">wrap Louisiane Menu</p></div><p class="description">Découvrez le Wrap Chicken Louisiane ! Une sauce légèrement relevée, des oignons croustillants, deux tranches de fromage et un irrésistible poulet pané croustillant. Le tout enveloppé dans une tortilla !</p><div class="price-plus"><p style="font-weight: bold;"><span>9</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/doublecheeseBurgerMenu_hxgw9j.png"><p class="title">double cheeseburger Menu</p></div><p class="description">L'incontournable DOUBLE CHEESE arrive dans votre menu KING DEAL : deux viandes de bœuf grillées à la flamme, deux tranches de fromages et deux rondelles de cornichons .</p><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/longChickenMenu_mtour8.png"><p class="title">long chicken Menu</p></div><p class="description">Il y a des choses dont on ne se lasse pas … Un poulet tendre pané aux épices et une salade croquante dans un pain extra-long. Un plaisir qui dure.</p><div class="price-plus"><p style="font-weight: bold;"><span>9</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/wrapchikencaesar_nb00et.png"><p class="title">wrap chicken ceasar Menu</p></div><p class="description">Découvrez le Wrap Chicken Caesar ! Une onctueuse sauce Caesar, des copeaux de Grana Padano, des oignons frits, des tranches de bacon et un irrésistible poulet pané croustillant. Le tout enveloppé dans une tortilla !</p><div class="price-plus"><p style="font-weight: bold;"><span>9</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/kingnuggets_avo2i1.png"><p class="title">nuggets Menu</p></div><p class="description">Leur secret ? Croustillants à l'extérieur, tendres à l'intérieur. Et vous, à quelle sauce allez vous les manger ? Disponible en x4, x6 et x9</p><div class="price-plus"><p style="font-weight: bold;"><span>8</span>€</p><button>Commander</button></div></div></div></div><div><h1 class="title">Kids Menus</h1><div class="menu"><div class="menu-case"><div><img src="./React App_files/koolking_u6ax6u.png"><p class="title">kool king Menu</p></div><p class="description">Le menu pour les 8 à 11 ans</p><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Commander</button></div></div><div class="menu-case"><div><img src="./React App_files/kingjunior_k9nwcg.png"><p class="title">king junior Menu</p></div><p class="description">Pour vos cow-boys en herbe, nous vous proposons un menu adapté à leur âge.</p><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Commander</button></div></div></div></div><div><h1>On the go</h1><div class="alim"><div class="menu-case-ali"><div><img src="./React App_files/wrapchikenlouisiane_p60a6j.png"><p style="text-align: center;">wrap chiken Louisiane</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/whopper_mn65if.png"><p style="text-align: center;">whopper</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/water_lgnpnl.png"><p style="text-align: center;">water</p></div><div class="price-plus"><p style="font-weight: bold;"><span>2</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/veggiesalad_q0as0b.png"><p style="text-align: center;">veggie salad</p></div><div class="price-plus"><p style="font-weight: bold;"><span>8</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/tea_ixa3lu.png"><p style="text-align: center;">tea</p></div><div class="price-plus"><p style="font-weight: bold;"><span>2</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/sanpe_efnpbq.png"><p style="text-align: center;">san pellegrino</p></div><div class="price-plus"><p style="font-weight: bold;"><span>2</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/onionrings_zmo2i7.png"><p style="text-align: center;">onion ring</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/mozzasticks_jlxlfv.png"><p style="text-align: center;">mozzasticks</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/longchiken_jv4aes.png"><p style="text-align: center;">long chicken</p></div><div class="price-plus"><p style="font-weight: bold;"><span>6</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/liptonicetea_y8ovlr.png"><p style="text-align: center;">ice tea</p></div><div class="price-plus"><p style="font-weight: bold;"><span>3</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/kingsundae_r1azqd.png"><p style="text-align: center;">king sundae</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/kingfusion_hhawpu.png"><p style="text-align: center;">king fusion</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/kingfries_k5lgho.png"><p style="text-align: center;">king fries</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/kingbreakfast_uwjmgf.png"><p style="text-align: center;">king breakfast</p></div><div class="price-plus"><p style="font-weight: bold;"><span>8</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/doublecheeseburger_doznab.png"><p style="text-align: center;">double cheese burger</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/bigfishsolo_e01rur.png"><p style="text-align: center;">big fish solo</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/chickensalad_jjxe95.png"><p style="text-align: center;">chiken salad</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/coca_upbkej.png"><p style="text-align: center;">coke</p></div><div class="price-plus"><p style="font-weight: bold;"><span>3</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/coffee_cucd7l.png"><p style="text-align: center;">coffee</p></div><div class="price-plus"><p style="font-weight: bold;"><span>2</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/creamyshakes_mingyx.png"><p style="text-align: center;">creamy shake</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/fries_fswh2n.png"><p style="text-align: center;">fries</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/petiteSalad_mqzk3w.png"><p style="text-align: center;">petite salade</p></div><div class="price-plus"><p style="font-weight: bold;"><span>3</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/doublesteakhouseburger_nag7zc.png"><p style="text-align: center;">doubleSteakhouse burger</p></div><div class="price-plus"><p style="font-weight: bold;"><span>6</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/doublewhopper_c4mkky.png"><p style="text-align: center;">double whopper</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/wrapChikenCeasar_najwvr.png"><p style="text-align: center;">wrap chiken ceasar</p></div><div class="price-plus"><p style="font-weight: bold;"><span>5</span>€</p><button>Plus</button></div></div><div class="menu-case-ali"><div><img src="./React App_files/nuggets_umbarf.png"><p style="text-align: center;">nuggets</p></div><div class="price-plus"><p style="font-weight: bold;"><span>4</span>€</p><button>Plus</button></div></div></div></div></div><div class="asideRecap"><h1 style="text-align: center; color: white; text-shadow: grey 2px 2px;">Recap Commande</h1><div class="display-price"><div class="bigrecap"><div><div class="display-price"><div><p style="font-weight: bold;"><span>0</span>€</p></div><a href="http://localhost:3000/payment">PAY NOW</a></div></div></div></div></div><div class="minirecap"><div style="display: flex;"><a href="http://localhost:3000/payment"><i class="fas fa-shopping-cart"></i></a><div></div></div></div></div></div></div></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.24d662f45cd0eb415153.hot-update.js"></script>
+
+</body></html>

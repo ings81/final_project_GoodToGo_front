@@ -4,7 +4,7 @@ import "./../style/MenuPage.css";
 const ChoiceMenu = ({ title, menus, handleAdd, handleDelete }) => {
   return (
     <div>
-      <h1>{title}</h1>
+      <h1 className="title">{title}</h1>
       <div className="menu">
         {menus.map(menu => (
           <div className="menu-case">

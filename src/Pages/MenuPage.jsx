@@ -54,7 +54,6 @@ export default class Menu extends Component {
   render() {
     return (
       <div>
-        <h1>Menu Page</h1>
         <div className="big-container">
           <div className="renderall">
             {/* <ChoiceMenu title="Individual Picks" items={this.state.aliments} /> */}
@@ -95,13 +94,13 @@ export default class Menu extends Component {
               </div>
             </div>
           </div>
-          <div className="minirecap">
-            <MiniRecapMenu
-              handleDelete={this.props.handleDelete}
-              selectedItems={this.props.currentMenus}
-            />
-          </div>
         </div>
+        {/* <div className="minirecap">
+          <MiniRecapMenu
+            handleDelete={this.props.handleDelete}
+            selectedItems={this.props.currentMenus}
+          />
+        </div> */}
       </div>
     );
   }

@@ -61,14 +61,17 @@ function NavMain() {
                     to="/dashboard"
                   /> */}
                   <SignoutIcon signout={signout} />
-                  <p>Log Out</p>
+                  <p style={{ color: "red" }}>Log Out</p>
                 </React.Fragment>
               ) : (
-                <NavLink
-                  activeClassName="is-active"
-                  className="icon auth fas fa-sign-out-alt "
-                  to="/signin"
-                />
+                <NavLink to="/signin">
+                  <div className="ico">
+                    <i
+                      activeClassName="is-active"
+                      className="icon auth fas fa-sign-out-alt "
+                    />
+                  </div>
+                </NavLink>
               )
             }
           </AuthConsumer>
