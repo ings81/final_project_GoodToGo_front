@@ -97,7 +97,7 @@ export default class Menu extends Component {
           </div>
           <div className="minirecap">
             <MiniRecapMenu
-              handleDelete={this.handleDelete}
+              handleDelete={this.props.handleDelete}
               selectedItems={this.props.currentMenus}
             />
           </div>
