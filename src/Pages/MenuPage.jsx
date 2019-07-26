@@ -65,7 +65,7 @@ export default class Menu extends Component {
             <ChoiceMenu
               title="Kids Menus"
               handleAdd={this.props.handleCurrentMenu}
-              handleDelete={this.handleDelete}
+              handleDelete={this.props.handleDelete}
               menus={this.getKidMenus()}
             />
             <ChoiceAliment

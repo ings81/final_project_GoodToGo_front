@@ -33,8 +33,8 @@ export default class Home extends Component {
             <div className="sub-sub-home">
               <i className="fas fa-home" />
               <p>
-                BURGER KING LYON TAPONAS A6 Aire De, Autoroute du Soleil, 69220
-                Taponas
+                BURGER KING LYON TAPONAS A6 Aire De Taponas, Autoroute du
+                Soleil, 69220 Taponas
               </p>
             </div>
           </div>
